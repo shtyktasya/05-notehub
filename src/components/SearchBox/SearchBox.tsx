@@ -1,5 +1,5 @@
 import css from "./SearchBox.module.css";
-import { ChangeEvent } from "react";
+import type { ChangeEvent } from "react";
 
 interface SearchBoxProps {
   onSearch: (value: string) => void;
