@@ -1,7 +1,7 @@
 import css from "./App.module.css";
 
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { useDebouncedCallback } from "use-debounce";
 
 import { fetchNotes } from "../../services/noteService";
@@ -33,6 +33,7 @@ const App = () => {
         perPage,
         search,
       }),
+    placeholderData: keepPreviousData,
   });
   const notes: Note[] = data?.notes ?? [];
   const totalPages = data?.totalPages ?? 0;
